@@ -1,0 +1,251 @@
+.card-container {
+  /* perspective: 1500px; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card {
+  width: 95%;
+  height: 350px;
+  background: none;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  transform: scale(1);
+  transition: transform 0.4s ease-in-out;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease-in-out;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+}
+
+.flip-card-front {
+  /* background: linear-gradient(135deg, #ff7a18, #af002d); */
+  background:  url('../logo/YW.png') no-repeat center/cover;
+  color: var(--accent);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.flip-card-front h3 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+   border: 1px solid #d32f2f0d;
+    padding: 1.5rem 2rem;
+    border-radius: 5px;
+    background: rgb(255 255 255 / 30%);
+}
+
+.flip-card-front p {
+  font-size: 18px;
+  opacity: 0.8;
+  letter-spacing: 1px;
+}
+
+.flip-card-back {
+  background: linear-gradient(135deg, #ff7a18, #af002d);
+  color: #333;
+  transform: rotateY(180deg);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.flip-card-back h3 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+
+
+/* social css */
+
+
+.social-links {
+  background:  url('../logo/YW.png') no-repeat center/cover;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 3.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.social-links.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+.social-container{
+    border: 1px solid #d32f2f0d;
+    padding: 1.5rem 2rem;
+    border-radius: 5px;
+    background: rgb(255 255 255 / 30%);
+}
+.social-title {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  color: var(--accent);
+  margin: 0 0 1rem;
+  justify-self: center;
+ 
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 20px;
+  
+}
+.icon{
+ margin-right: 8px;
+}
+.connect{
+  font-size: 20px;
+  color: #000000;
+}
+.connect:hover{
+  font-size: 20px;
+   color: var(--neutral);
+}
+
+.social-link {
+  color: var(--neutral);
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+ text-decoration: none;
+ 
+}
+
+.social-link:hover {
+  color: var(--text);
+  transform: scale(1.2);
+}
+
+.social-link::before {
+  content: attr(title);
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.social-link:hover::before {
+  opacity: 1;
+}
+.success-message {
+  color: #28a745;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+
+  .social-links {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+.flip-card {
+  width: 100%;
+  height: 350px;
+}
+  .contact {
+    padding: clamp(1.5rem, 4vw, 3rem) 0;
+  }
+  .connect{
+    font-size: 16px;
+  }
+  .social-link {
+  color: var(--neutral);
+  font-size: 1rem;
+}
+
+  .contact-title {
+    font-size: clamp(1.75rem, 3.5vw, 2rem);
+  }
+
+  .form-title,
+  .social-title {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  }
+
+  .contact-form,
+  .social-links {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-input,
+  .form-label {
+    font-size: clamp(0.9rem, 1.6vw, 0.95rem);
+  }
+
+  .form-submit {
+    max-width: 100%;
+  }
+
+  .social-link {
+    font-size: 1.2rem;
+  }
+}

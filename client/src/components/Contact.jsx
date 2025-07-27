@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import '../assets/styles/Contact.css';
+import AddressCard from './AddressCard';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -142,41 +143,9 @@ function Contact() {
           {error && <p className="error-message">{error}</p>}
           {successMessage && <p className="success-message">{successMessage}</p>}
         </form>
-        <div className="social-links" ref={socialRef}>
-          <div className='social-container'>
-          <h3 className="social-title">Connect with Me</h3>
-          <div className="social-icons">
-            <a
-              href="mailto:yoheswaran.2108@gmail.com"
-              className="social-link"
-              title="Email"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="fas fa-envelope icon"></i><span className='connect'>yoheswaran.2108@gmail.com</span>
-            </a>
-            <a
-              href="tel:+919489450566"
-              className="social-link"
-              title="Phone"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="fas fa-phone icon"></i><span className='connect'>+919489450566</span>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/yohes-mahendran/"
-              className="social-link"
-              title="LinkedIn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="fab fa-linkedin icon"></i>
-              
-              <span className='connect'>yohes-mahendran</span>
-            </a>
-          </div>
-        </div>
+        <div className="" ref={socialRef}>
+          {/* social-links */}
+        <AddressCard />
         </div>
       </div>
     </section>
