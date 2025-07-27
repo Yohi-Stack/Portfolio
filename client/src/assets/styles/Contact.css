@@ -142,15 +142,18 @@
   opacity: 1;
   transform: translateY(0);
 }
-
+.social-container{
+    border: 1px solid #d32f2f0d;
+    padding: 1.5rem 2rem;
+    border-radius: 5px;
+    background: rgb(255 255 255 / 30%);
+}
 .social-title {
   font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-  color: var(--text);
+  color: var(--accent);
   margin: 0 0 1rem;
-  border: 1px solid var(--accent);
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  background: rgba(255, 255, 255, 0.8);
+  justify-self: center;
+ 
 }
 
 .social-icons {
@@ -167,7 +170,7 @@
 }
 .connect{
   font-size: 20px;
-  color: #989898;
+  color: #000000;;
 }
 .social-link {
   color: var(--accent);

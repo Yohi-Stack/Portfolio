@@ -16,7 +16,7 @@ const app = express();
 // Validate MONGO_URI
 if (!process.env.MONGO_URI) {
   console.error('Error: MONGO_URI is not defined in .env file');
-  process.exit(1); // Exit if MONGO_URI is missing
+  process.exit(1); 
 }
 
 // Get __dirname in ES modules

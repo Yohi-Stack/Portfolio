@@ -143,6 +143,7 @@ function Contact() {
           {successMessage && <p className="success-message">{successMessage}</p>}
         </form>
         <div className="social-links" ref={socialRef}>
+          <div className='social-container'>
           <h3 className="social-title">Connect with Me</h3>
           <div className="social-icons">
             <a
@@ -175,6 +176,7 @@ function Contact() {
               <span className='connect'>yohes-mahendran</span>
             </a>
           </div>
+        </div>
         </div>
       </div>
     </section>
