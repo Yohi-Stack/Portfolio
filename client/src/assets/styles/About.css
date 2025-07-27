@@ -1,0 +1,207 @@
+/* About Section */
+.about {
+  background: linear-gradient(to bottom, var(--neutral) 0%, rgba(245, 247, 250, 0.8) 100%);
+  padding: clamp(2rem, 5vw, 4rem) 0;
+  animation: fadeIn 0.8s ease-in;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  color: var(--primary);
+  margin: 0;
+}
+
+.section-divider {
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  margin: 0.5rem auto;
+  border-radius: 2px;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.about-main {
+  animation: slideUp 0.8s ease-out;
+}
+
+.about-summary {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.about-subtitle {
+  font-size: clamp(1.5rem, 3vw, 1.75rem);
+  color: var(--primary);
+  margin: 1rem 0 0.5rem;
+}
+
+.skills-container {
+  margin-bottom: 1.5rem;
+}
+
+.skill-progress {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.skill-name {
+  flex: 0 0 120px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.progress-bar1 {
+  flex: 1;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--secondary);
+  transition: width 1s ease-in-out;
+}
+
+.animate-progress .progress-fill {
+  width: 0;
+  animation: fillProgress 1.5s ease-in-out forwards;
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  background: var(--primary);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-tag:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.about-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: slideUp 0.8s ease-out 0.2s;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  color: var(--primary);
+  margin: 0 0 0.75rem;
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.6;
+  margin: 0.5rem 0;
+}
+
+.card-content p strong {
+  color: var(--primary);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fillProgress {
+  to { width: var(--width); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .about-sidebar {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: clamp(1.5rem, 4vw, 3rem) 0;
+  }
+
+  .about-title {
+    font-size: clamp(1.75rem, 3.5vw, 2rem);
+  }
+
+  .about-subtitle {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  }
+
+  .skill-name {
+    flex: 0 0 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-summary {
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
+  }
+
+  .skill-progress {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .skill-name {
+    flex: none;
+  }
+
+  .progress-bar1 {
+    width: 100%;
+  }
+}

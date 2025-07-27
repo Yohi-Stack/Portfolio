@@ -1,0 +1,181 @@
+/* Color Scheme */
+:root {
+  --primary: #003087; /* Refined Dark Blue for better contrast */
+  --secondary: #1e90ff; /* Vibrant Blue for highlights */
+  --tertiary: #6ab0de; /* Light Blue for subtle accents */
+  --accent: #d32f2f; /* Adjusted Red for CTAs, better contrast */
+  --neutral: #f5f7fa; /* Softer Light Gray for background */
+  --text: #1a1a1a; /* Darker text for readability */
+  --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Typography */
+body {
+  font-family: 'Open Sans', 'Roboto', sans-serif;
+  color: var(--text);
+  background-color: var(--neutral);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  font-size: clamp(16px, 2.5vw, 18px); /* Fluid typography */
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+}
+
+/* Modular scale for typography */
+h1 { font-size: clamp(2rem, 5vw, 3rem); }
+h2 { font-size: clamp(1.75rem, 4vw, 2.25rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 1.75rem); }
+h4 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+
+p {
+  margin: 0 0 1rem;
+}
+
+/* Container */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  /* padding: clamp(1rem, 3vw, 2rem); */
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: var(--border);
+}
+
+/* Primary Button */
+.btn-primary {
+  background-color: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #b71c1c; /* Darkened red */
+  box-shadow: var(--shadow);
+  transform: scale(1.05);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-primary:disabled {
+  background-color: #cccccc;
+  border-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background-color: var(--secondary);
+  color: white;
+  border-color: var(--secondary);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: #1565c0;
+  box-shadow: var(--shadow);
+  transform: scale(1.05);
+}
+
+.btn-secondary:active {
+  transform: scale(0.98);
+}
+
+/* Outline Button */
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-outline:hover,
+.btn-outline:focus {
+  background-color: var(--primary);
+  color: white;
+  box-shadow: var(--shadow);
+}
+
+.btn-outline:active {
+  transform: scale(0.98);
+}
+
+/* Utility Classes */
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.p-1 { padding: 1rem; }
+.p-2 { padding: 2rem; }
+
+.shadow-sm { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+.shadow-md { box-shadow: var(--shadow); }
+
+.border { border: var(--border); }
+.rounded { border-radius: 8px; }
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+  h2 { font-size: clamp(1.5rem, 3.5vw, 2rem); }
+  h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
+  .container { padding: clamp(0.75rem, 2vw, 1.5rem); }
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: clamp(1.5rem, 3.5vw, 2rem); }
+  h2 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
+  h3 { font-size: clamp(1rem, 2.5vw, 1.25rem); }
+  .container { padding: 1rem; }
+}
+
+@media (max-width: 480px) {
+  body { font-size: clamp(14px, 2vw, 16px); }
+  .btn { padding: 0.5rem 1rem; font-size: 0.9rem; }
+}
+
+/* Accessibility */
+:focus {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
